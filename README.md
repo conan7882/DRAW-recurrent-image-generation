@@ -1,4 +1,4 @@
-# DRAW-tensorflow
+# TensorFlow implementation of DRAW image generation
 TensorFlow implementation of [DRAW: A Recurrent Neural Network For Image Generation](https://arxiv.org/pdf/1502.04623.pdf) (ICML 15).
  - The the model from the paper:
  
@@ -41,5 +41,40 @@ Run the script [`example/draw.py`](example/draw.py) to train and visualize the m
 * `--epoch`: Max number of epochs. Default: `100`.
 * `--lr`: Initial learning rate. Default: `1e-3`.
 * `--load`: The epoch ID of trained model to be restored for evaluation or prediction. Default: `99`.
+
+
+### Train the model
+- Go to `examples/`, then run
+
+ ```
+ python draw.py \
+   --train \
+   --step 50 \
+   --embed 100 \
+   --lr 1e-3 \
+   --epoch 100
+ ```
+- Summary and trained models will be saved in `save_draw_path` in [`example/config.py`](example/config.py).
+
+### Visualization of results
+
+- Go to `examples/`, then run
+
+ ```
+ python draw.py \
+   --viz \
+   --step 50 \
+   --embed 100 \
+   --load 99
+ ```
+ - Generation gif will be save in `save_draw_path` in [`example/config.py`](example/config.py) with name `draw_generation.gif'`
+ 
+ 
+ ## Reference code
+ - https://github.com/jbornschein/draw
+ 
+
+ ## Author
+ Qian Ge
 
 
